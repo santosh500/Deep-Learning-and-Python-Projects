@@ -10,7 +10,7 @@ nltk.download('wordnet')
 nltk.download('words')
 import re
 from nltk import pos_tag, ne_chunk
-
+#Input from text file used from : https://en.wikipedia.org/wiki/Python_(programming_language)
 a=open('input.txt')
 input=a.read()
 output = open('output.txt','w')
@@ -40,7 +40,7 @@ for i in lemArray:
     output.write(i)
     output.write('\n')
 
-
+#Bigram part
 output.write('Bigrams..........................................................................................................................')
 output.write('\n')
 # Bigrams
@@ -123,6 +123,7 @@ for i in BigramDict:
 NewDict.update({mainVerb: countMain})
 print(NewDict)
 
+#Concatenate from Input text
 a=open('input.txt')
 input=str(a.read())
 input = input.replace(' ','')
