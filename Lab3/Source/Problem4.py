@@ -1,3 +1,5 @@
+#This was taken and referred from Lecture 6 Source Code: 
+
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import datasets
 from sklearn.cross_validation import train_test_split
