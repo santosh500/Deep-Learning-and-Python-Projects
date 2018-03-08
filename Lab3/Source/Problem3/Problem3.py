@@ -44,6 +44,7 @@ for i in lemArray:
 output.write('Bigrams..........................................................................................................................')
 output.write('\n')
 # Bigrams
+print('Bigrams')
 BigramDict = {}
 for i in range(len(tokens)):
     mainStr = tokens[i:i+2]
@@ -59,75 +60,71 @@ for i in range(len(tokens)):
     else:
         BigramDict.update({value: 1})
 
-for i in BigramDict:
-    print(i)
-print('hi there')
+
+
+print('Bigrams')
 print(BigramDict)
 NewDict = {}
 countMain = 0
 mainVerb = ''
 for i in BigramDict:
-    print(BigramDict[i])
     if(BigramDict[i] > countMain):
         if re.match("^[a-zA-Z0-9_]*$", i):
             countMain = BigramDict[i]
             mainVerb = i
 NewDict.update({mainVerb: countMain})
-print(NewDict)
+
 newVerb = countMain
 countMain = 0
 mainVerb = ''
 for i in BigramDict:
-    print(BigramDict[i])
     if(BigramDict[i] > countMain):
         if(BigramDict[i] < newVerb):
             if re.match("^[a-zA-Z0-9_]*$", i):
                 countMain = BigramDict[i]
                 mainVerb = i
 NewDict.update({mainVerb: countMain})
-print(NewDict)
+
 newVerb = countMain
 countMain = 0
 mainVerb = ''
 for i in BigramDict:
-    print(BigramDict[i])
     if(BigramDict[i] > countMain):
         if(BigramDict[i] < newVerb):
             if re.match("^[a-zA-Z0-9_]*$", i):
                 countMain = BigramDict[i]
                 mainVerb = i
 NewDict.update({mainVerb: countMain})
-print(NewDict)
+
 newVerb = countMain
 countMain = 0
 mainVerb = ''
 for i in BigramDict:
-    print(BigramDict[i])
     if(BigramDict[i] > countMain):
         if(BigramDict[i] < newVerb):
             if re.match("^[a-zA-Z0-9_]*$", i):
                 countMain = BigramDict[i]
                 mainVerb = i
 NewDict.update({mainVerb: countMain})
-print(NewDict)
+
 newVerb = countMain
 countMain = 0
 mainVerb = ''
 for i in BigramDict:
-    print(BigramDict[i])
     if(BigramDict[i] > countMain):
         if(BigramDict[i] < newVerb):
             if re.match("^[a-zA-Z0-9_]*$", i):
                 countMain = BigramDict[i]
                 mainVerb = i
 NewDict.update({mainVerb: countMain})
+print('Bigrams Top 5')
 print(NewDict)
 
 #Concatenate from Input text
 a=open('input.txt')
 input=str(a.read())
 input = input.replace(' ','')
-print(input)
+
 
 valuesMain = input.split('.')
 containAll = []
@@ -135,5 +132,6 @@ for i in NewDict:
     for j in valuesMain:
         if(j.__contains__(i)):
             containAll.append(j)
-
-print(containAll)
+print('Concatenated Sentences')
+for i in containAll:
+    print(i)
