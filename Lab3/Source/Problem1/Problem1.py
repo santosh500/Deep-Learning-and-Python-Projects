@@ -141,13 +141,8 @@ for i in range(0,len(x4)):
 
 plt.axis([-5, 5, -2, 2])
 
-red1 = mpatches.Patch(color='red', label='Good')
-plt.legend(handles=[red1])
-blue1 = mpatches.Patch(color='blue', label='Average')
-plt.legend(handles=[blue1])
-green1 = mpatches.Patch(color='green', label='Bad')
 
-
+#This code is referenced from: https://stackoverflow.com/questions/44098362/using-mpatches-patch-for-a-custom-legend
 colors = ["g", "b", "r"]
 texts = ["Bad", "Average","Good"]
 patches = [ plt.plot([],[], marker="o", ms=10, ls="", mec=None, color=colors[i],
