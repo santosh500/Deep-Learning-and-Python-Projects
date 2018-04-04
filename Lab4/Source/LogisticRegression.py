@@ -8,7 +8,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 dataset = input_data.read_data_sets("/data/mnist", one_hot=True)
 #Parameters
 learningRate = 0.01
-hyperParameter = 0.01
+hyperParameter = 0.5
 horizontalPixels = 28
 verticalPixels=28
 labelVariations = 10
@@ -24,7 +24,9 @@ regulationLoss = tf.nn.l2_loss(weight)
 totalLoss= (hyperParameter * regulationLoss) + generalLoss
 # Gradient Descent Optimizer
 GDOptimizer =tf.train.GradientDescentOptimizer(learning_rate=learningRate).minimize(totalLoss)
+#Run Session
 with tf.Session() as session:
+    #Find model for optimizer
     session.run(tf.global_variables_initializer())
     writer = tf.summary.FileWriter('./graphs/logisticRegressionDLLab', session.graph)
     #Number of epochs (50)
