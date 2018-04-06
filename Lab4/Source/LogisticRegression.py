@@ -37,7 +37,7 @@ with tf.Session() as session:
             #Divides into Xset and Yset for each batch
             Xset, Yset = dataset.train.next_batch(50)
             # Divides into Xset and Yset for each batch
-            session.run([GDOptimizer, generalLoss], feed_dict={X: Xset, Y: Yset})
+            session.run([GDOptimizer, totalLoss], feed_dict={X: Xset, Y: Yset})
     writer.close()
 
     #Find Accuracy
