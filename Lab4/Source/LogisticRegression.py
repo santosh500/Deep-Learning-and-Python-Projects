@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import xlrd
 import tensorflow as tf
 from tensorflow.examples.tutorials.mnist import input_data
+#Referenced from two sources (see References in wiki page): Multinomial Logistic Regression with Tensorflow,Standford University Notes and Tutorial #for Logistic Regression
 #Data set from MNIST
 dataset = input_data.read_data_sets("/data/mnist", one_hot=True)
 #Parameters
