@@ -1,3 +1,4 @@
+#This program was used to parse the original file in order to obtain the data in each file for each class
 import csv
 
 file1 = open('oneRating.txt','w')
