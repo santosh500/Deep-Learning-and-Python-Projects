@@ -1,3 +1,4 @@
+#This code was used by me, Paul Charles, and was reused in order to do LSTM analysis
 #! /usr/bin/env python
 
 import tensorflow as tf
@@ -183,9 +184,9 @@ with tf.Graph().as_default():
             train_step(x_batch, y_batch)
             current_step = tf.train.global_step(sess, global_step)
             if current_step % FLAGS.evaluate_every == 0:
-                print("\nEvaluation:")
+
                 dev_step(x_dev, y_dev, writer=dev_summary_writer)
-                print("")
+
             if current_step % FLAGS.checkpoint_every == 0:
                 path = saver.save(sess, checkpoint_prefix, global_step=current_step)
-                print("Saved model checkpoint to {}\n".format(path))
+                

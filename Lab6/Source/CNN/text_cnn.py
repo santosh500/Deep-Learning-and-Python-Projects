@@ -1,6 +1,6 @@
 import tensorflow as tf
 import numpy as np
-
+#This code was used by me, Paul Charles, and was reused in order to do LSTM analysis
 
 class TextCNN(object):
     """

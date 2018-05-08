@@ -6,7 +6,7 @@ A story is automatically generated if the predicted word is fed back as input.
 Author: Rowel Atienza
 Project: https://github.com/roatienza/Deep-Learning-Experiments
 '''
-
+#This code was used by me, Paul Charles, and was reused in order to do LSTM analysis
 from __future__ import print_function
 
 import numpy as np
@@ -29,7 +29,7 @@ def elapsed(sec):
 
 
 # Text file containing words for training
-training_file = 'belling_the_cat.txt'
+training_file = 'dataset.txt'
 
 
 def read_data(fname):
@@ -88,11 +88,8 @@ def RNN(x, weights, biases):
     # (eg. [had] [a] [general] -> [20] [6] [33])
     x = tf.split(x, n_input, 1)
 
-
-    rnn_cell = rnn.MultiRNNCell([rnn.BasicLSTMCell(n_hidden),rnn.BasicLSTMCell(n_hidden)])
-
     # Uncomment line below to test but comment out the 2-layer rnn.MultiRNNCell above
-    #rnn_cell = rnn.BasicLSTMCell(n_hidden)
+    rnn_cell = rnn.BasicLSTMCell(n_hidden)
 
     # generate prediction
     outputs, states = rnn.static_rnn(rnn_cell, x, dtype=tf.float32)
